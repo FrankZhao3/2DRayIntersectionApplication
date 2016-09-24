@@ -1,5 +1,7 @@
 package device;
-
+/**
+ * Created by FrankZhao on 9/23/16.
+ */
 public class Position {
 	private double x = 0;
 	private double y = 0;

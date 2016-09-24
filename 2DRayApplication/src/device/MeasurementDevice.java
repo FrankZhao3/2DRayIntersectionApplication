@@ -1,9 +1,11 @@
 package device;
-
+/**
+ * Created by FrankZhao on 9/23/16.
+ */
 public class MeasurementDevice {
 	Position position; 
-	Double offsetAngle;
-	Double facingAngle;	// angle offset between x-axis (counter-clockwise)
+	Double offsetAngle; // measure in degree
+	Double facingAngle;	// angle offset between x-axis (counter-clockwise) measure in degree
 	
 	public MeasurementDevice(Double positionX, Double positionY, Double offsetAngle, Double facingAngle) {
 		position = new Position(positionX, positionY);
