@@ -37,7 +37,12 @@ public class RayIntersectionSolver {
 		}
 	}
 	
-	
+	/**
+	 * compute the quadrant the device angle points to
+	 *
+	 * @param coordinateAngle1   	 degree
+	 * @return quadrant    			 
+	 */
 	
 	private static int setConstraint(double coordinateAngle1) {
 		if(coordinateAngle1 <= 90) {
@@ -51,6 +56,12 @@ public class RayIntersectionSolver {
 		}
 	}
 	
+	/**
+	 * check if the result satisfy the quadrant constraint
+	 *
+	 * @param constraint position res position p
+	 * @return true or false    			 
+	 */
 	
 	private static boolean checkConstraint(int constraint, Position res, Position p) {
 //		System.out.println("constraint: " + String.valueOf(constraint) + " " + res + p);
@@ -66,8 +77,6 @@ public class RayIntersectionSolver {
 		}
 		return false;
 	}
-
-
 
 
 	/**
