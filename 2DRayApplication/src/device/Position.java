@@ -25,4 +25,7 @@ public class Position {
 	public void setY(double y) {
 		this.y = y;
 	}
+	public String toString() {
+		return "x: " + String.valueOf(x) + " " + "y: " + String.valueOf(y);
+	}
 }

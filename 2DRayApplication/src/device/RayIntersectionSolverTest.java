@@ -16,6 +16,25 @@ public class RayIntersectionSolverTest {
 		assertEquals(true, compareMeasurement(new Position(1.9, 2.6), 
 						RayIntersectionSolver.calculateRayIntersection(m1, m2)));
 		
+		// same direction 
+		m1 = new MeasurementDevice(0.0, 2.0, 10.0, 90.0);
+		m2 = new MeasurementDevice(3.0, 0.0, 10.0, 90.0);
+		System.out.println(RayIntersectionSolver.calculateRayIntersection(m1, m2));
+		assertEquals(true, compareMeasurement(new Position(), 
+				RayIntersectionSolver.calculateRayIntersection(m1, m2)));
+		
+		m1 = new MeasurementDevice(0.0, 2.0, 0.0, 0.0);
+		m2 = new MeasurementDevice(3.0, 0.0, 0.0, 0.0);
+		System.out.println(RayIntersectionSolver.calculateRayIntersection(m1, m2));
+		assertEquals(true, compareMeasurement(new Position(), 
+				RayIntersectionSolver.calculateRayIntersection(m1, m2)));
+		
+		//uncrossable direction
+		m1 = new MeasurementDevice(0.0, 2.0, 0.0, 100.0);
+		m2 = new MeasurementDevice(3.0, 0.0, 10.0, 50.0);
+		System.out.println(RayIntersectionSolver.calculateRayIntersection(m1, m2));
+		assertEquals(true, compareMeasurement(new Position(), 
+				RayIntersectionSolver.calculateRayIntersection(m1, m2)));
 	}
 	
 	/**
@@ -26,7 +45,7 @@ public class RayIntersectionSolverTest {
 	 * @return      boolean
 	 */
 	private boolean compareMeasurement(Position p1, Position p2) {
-		System.out.println("Measurement Results: " + "X: " + Double.toString(p2.getX()) + " Y: " +  Double.toString(p2.getY()));
+//		System.out.println("Measurement Results: " + "X: " + Double.toString(p2.getX()) + " Y: " +  Double.toString(p2.getY()));
 		if(Math.abs(p1.getX() - p2.getX()) < 0.5 && Math.abs(p1.getY() - p2.getY()) < 0.5) {
 			return true;
 		} else {
